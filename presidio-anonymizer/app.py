@@ -159,6 +159,7 @@ class Server:
             self.logger.error(f"A fatal error occurred during execution: {e}")
             return jsonify(error="Internal server error"), 500
 
+
 def _batch_items(field_name, value, texts):
     """Align a per-item results field with a batch ``text`` list.
 
@@ -178,9 +179,10 @@ def _batch_items(field_name, value, texts):
     return value
 
 
-def create_app(): # noqa
+def create_app():  # noqa
     server = Server()
     return server.app
+
 
 if __name__ == "__main__":
     app = create_app()
